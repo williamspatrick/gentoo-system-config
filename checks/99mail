@@ -1,0 +1,16 @@
+# Set up mutt.
+mkdir -p ~/Mail/patrick@stwcx
+install_file config-files/.muttrc ~
+
+# Install private addressbook.
+install_file private/addressbook ~/.abook
+
+# Install offlineimap.
+echo ">>> Enable offlineimap systemd timers"
+install_file config-files/systemd/offlineimap.service ~/.local/share/systemd/user
+install_file config-files/systemd/offlineimap.timer ~/.local/share/systemd/user
+systemctl --user enable offlineimap.timer
+#TODO: install offlineimap/config to .config/offlineimap/config
+
+# Install msmtp
+#TODO: install .msmtprc

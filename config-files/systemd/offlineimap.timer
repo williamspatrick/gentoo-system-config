@@ -1,0 +1,12 @@
+[Unit]
+Description=Fetch email every 5 minutes.
+RefuseManualStart=no
+RefuseManualStop=no
+
+[Timer]
+Persistent=false
+OnCalendar=*-*-* *:05/5:00
+Unit=offlineimap.service
+
+[Install]
+WantedBy=default.target

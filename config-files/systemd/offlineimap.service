@@ -1,0 +1,11 @@
+[Unit]
+Description=Fetch email via IMAP
+RefuseManualStart=no
+RefuseManualStop=no
+OnFailure=failure-email@%i.service
+JobTimeoutSec=360
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/offlineimap -u quiet
+ExecStop=
