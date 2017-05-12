@@ -1,0 +1,26 @@
+#!/bin/bash
+
+resize_to()
+{
+    printf "\e[8;$1;$2;t"
+}
+
+case $1 in
+    mutt)
+        resize_to 65 80
+        ;;
+    irc)
+        resize_to 100 120
+        ;;
+    long)
+        resize_to 50 80
+        ;;
+    default)
+        resize_to 25 80
+        ;;
+    *)
+        resize_to $1 $2
+        ;;
+esac
+
+echo
