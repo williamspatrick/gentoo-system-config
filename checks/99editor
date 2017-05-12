@@ -1,6 +1,8 @@
-#!/bin/bash
+echo ">>> Checking for editor to be vi"
 if ! eselect --brief editor show | grep /usr/bin/vi -q ; then
     LINE=`eselect --brief editor list | awk '/\/usr\/bin\/vi/ { print FNR }'`
-    echo Updating editor to vi: eselect editor set $LINE
+    echo ">>> Updating editor to vi: eselect editor set $LINE"
     sudo eselect editor set $LINE
+else
+    echo ">>> Editor already vi"
 fi
