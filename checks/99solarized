@@ -1,0 +1,12 @@
+echo ">>> Checking solarized for color theme"
+mkdir -p ~/.config/solarized
+
+if [ ! -d ~/.config/solarized/mutt-colors-solarized ]; then
+    echo ">>> Cloning mutt colors"
+    git clone ssh://git@github.com/williamspatrick/mutt-colors-solarized ~/.config/solarized/mutt-colors-solarized
+fi
+
+if [ ! -d ~/.config/solarized/vim-colors-solarized ]; then
+    echo ">>> Cloning vim colors"
+    git clone ssh://git@github.com/altercation/vim-colors-solarized ~/.config/solarized/vim-colors-solarized
+fi
