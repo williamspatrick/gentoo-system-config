@@ -1,0 +1,4 @@
+for script in $ROOT/home-scripts/*
+do
+    install_file home-scripts/`basename $script` ~/private/bin
+done
