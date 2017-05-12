@@ -1,0 +1,18 @@
+servers:
+  - name: openbmc
+    url: https://gerrit.openbmc-project.xyz
+    username: williamspatrick
+    # Set corresponding HTTP password in gerrit settings
+    password: {{PASSWORD}}
+    git-root: ~/private/
+
+palettes:
+    - name: default
+      header: ['light blue', '']
+      table-header: ['light blue,bold', '']
+      subscribed-project: ['light green', '']
+      focused-subscribed-project: ['light green,standout', '']
+      unsubscribed-project: ['light red', '']
+      focused-unsubscribed-project: ['light red,standout', '']
+      unreviewed-project: ['dark green', '']
+      focused-unreviewed-project: ['dark green,standout', '']
