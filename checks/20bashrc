@@ -1,0 +1,5 @@
+install_file config-files/.bashrc ~
+for script in $ROOT/config-files/bashrc/*
+do
+    install_file config-files/bashrc/`basename $script` ~/.config/bashrc
+done
