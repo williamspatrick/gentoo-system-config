@@ -1,0 +1,5 @@
+alias oggplay='nohup ogg123 -Z /media/music/ --audio-buffer 2048 -q > /dev/null 2>&1 &'
+alias oggpause='killall -STOP ogg123'
+alias oggunpause='killall -CONT ogg123'
+alias oggskip='killall -INT ogg123'
+alias oggquit='killall ogg123'

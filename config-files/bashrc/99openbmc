@@ -1,0 +1,2 @@
+alias gerrit-hook='scp openbmc.gerrit:hooks/commit-msg `git rev-parse --show-toplevel`/.git/hooks/'
+alias gerrit-origin='git config remote.origin.url ssh://openbmc.gerrit/openbmc/`git rev-parse --show-toplevel | xargs basename`'
