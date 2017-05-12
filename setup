@@ -1,5 +1,29 @@
 #!/bin/bash
 
+install_file()
+{
+    echo ">>> Installing file $1 to $2"
+    mkdir -p $2
+    if ! diff $ROOT/$1 $2 > /dev/null ; then
+        echo ">>> Updating $2"
+	cp $ROOT/$1 $2
+    else
+        echo ">>> Already up to date."
+    fi
+}
+
+check_hash()
+{
+    echo ">>> Checking hash $1"
+    if ! sha512sum --quiet --check $ROOT/$1 ; then
+    	echo ">>> Error: failed hash $1"
+	cat $ROOT/$1
+	read
+    else
+        echo ">>> Passed"
+    fi
+}
+
 ROOT=`dirname $0`
 
 for check in $ROOT/checks/*

@@ -1,0 +1,4 @@
+install_file config-files/authorized_keys ~/.ssh
+install_file config-files/config ~/.ssh
+install_file config-files/id_rsa.pub ~/.ssh
+check_hash hashes/id_rsa.hash
