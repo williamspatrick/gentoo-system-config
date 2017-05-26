@@ -1,0 +1,13 @@
+#/bin/bash
+
+prefix=$1
+pythonver=`python -V 2>&1 | sed "s/Python //" | sed "s/\(.*\.*\)\..*/\1/"`
+
+mkdir -p ${prefix}/usr
+
+export PATH=${PATH}:${prefix}/usr/bin
+export PKG_CONFIG_PATH=${prefix}/usr/lib/pkgconfig
+export PYTHONPATH=${prefix}/usr/lib/python${pythonver}/site-packages
+export PYTHONPATH=${PYTHONPATH}:${prefix}/usr/lib64/python${pythonver}/site-packages
+
+./bootstrap.sh && ./configure --with-libtool-sysroot=${prefix} CPPFLAGS="-I${prefix}/usr/include" --prefix=${prefix}/usr --enable-transaction && make -j && make install
