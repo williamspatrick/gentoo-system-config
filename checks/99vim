@@ -1,0 +1,2 @@
+install_file config-files/.vimrc ~
+install_file config-files/.gvimrc ~
