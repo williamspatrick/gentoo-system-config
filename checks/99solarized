@@ -9,4 +9,9 @@ fi
 if [ ! -d ~/.config/solarized/vim-colors-solarized ]; then
     echo ">>> Cloning vim colors"
     git clone ssh://git@github.com/altercation/vim-colors-solarized ~/.config/solarized/vim-colors-solarized
+    mkdir -p ~/.vim/colors
+    if [ ! -f ~/.vim/colors/solarized.vim ]; then
+        ln -s ~/.config/solarized/vim-colors-solarized/colors/solarized.vim \
+              ~/.vim/colors/solarized.vim
+    fi
 fi
