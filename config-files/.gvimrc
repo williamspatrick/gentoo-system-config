@@ -46,6 +46,7 @@ let g:DirDiffWindowSize=10
 
 " Extra options based on file-type
 autocmd FileType mail set spell
+autocmd FileType gitcommit set spell
 autocmd FileType python set foldmethod=indent
 
 

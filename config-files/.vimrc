@@ -11,4 +11,5 @@ set softtabstop=4
 set backspace=2
 
 autocmd FileType mail set spell
+autocmd FileType gitcommit set spell
 
