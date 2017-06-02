@@ -10,4 +10,4 @@ export PKG_CONFIG_PATH=${prefix}/usr/lib/pkgconfig
 export PYTHONPATH=${prefix}/usr/lib/python${pythonver}/site-packages
 export PYTHONPATH=${PYTHONPATH}:${prefix}/usr/lib64/python${pythonver}/site-packages
 
-./bootstrap.sh && ./configure --with-libtool-sysroot=${prefix} CPPFLAGS="-I${prefix}/usr/include" --prefix=${prefix}/usr --enable-transaction && make -j && make install
+./bootstrap.sh && ./configure --with-libtool-sysroot=${prefix} --with-sysroot=${prefix} CPPFLAGS="-I${prefix}/usr/include" LDFLAGS="-L${prefix}/usr/lib" --prefix=${prefix}/usr --enable-transaction  ${CONFIGURE_FLAGS} && make -j && make install
